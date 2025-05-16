@@ -50,27 +50,33 @@ export default function PDFUpload() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-2xl shadow-lg">
-      <div
-        className="border-2 border-dashed border-gray-300 p-6 rounded-lg text-center cursor-pointer"
-        onClick={() => document.getElementById("pdfInput").click()}
-      >
-        <p className="text-gray-600">Click or drag a PDF here to upload</p>
-        {file && <p className="mt-2 font-medium">{file.name}</p>}
-        <input
-          id="pdfInput"
-          type="file"
-          accept="application/pdf"
-          onChange={handleFileChange}
-          hidden
-        />
-      </div>
+    <div>
+      <h2 className="font-bold text-4xl text-white">PDF to JPG Converter</h2>
+      <div className="max-w-md mx-auto mt-10 p-6 border rounded-2xl shadow-lg bg-slate-200">
+        <div
+          className="border-2 border-dashed border-slate-300 p-6 rounded-lg text-center cursor-pointer"
+          onClick={() => document.getElementById("pdfInput").click()}
+        >
+          <p className="text-gray-600">Click or drag a PDF here to upload</p>
+          {file && <p className="mt-2 font-medium">{file.name}</p>}
+          <input
+            id="pdfInput"
+            type="file"
+            accept="application/pdf"
+            onChange={handleFileChange}
+            hidden
+          />
+        </div>
 
-      <div className="mt-4">
-        <Button className="w-full" onClick={handleUpload}>
-          Convert to JPG
-        </Button>
-        {status && <p className="text-sm mt-2 text-center">{status}</p>}
+        <div className="mt-4">
+          <Button
+            className="w-full bg-slate-700 hover:bg-slate-800"
+            onClick={handleUpload}
+          >
+            Convert to JPG
+          </Button>
+          {status && <p className="text-sm mt-2 text-center">{status}</p>}
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import PDFUpload from "./_components/PDFUpload";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center items-center bg-slate-500">
       <PDFUpload />
     </div>
   );
