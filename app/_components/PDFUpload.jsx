@@ -27,10 +27,13 @@ export default function PDFUpload() {
     formData.append("pdf", file);
 
     try {
-      const res = await fetch("http://localhost:8000/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://pdf-to-jpg-converter.onrender.com/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!res.ok) throw new Error("Upload failed.");
 
